@@ -101,16 +101,16 @@ const NUMBERS_LIST =
 53503534226472524250874054075591789781264330331690`;
 
 function getSumOfBigListNumbers(numbersList) {
-    let sum = '';
-    let carry = 0;
-    for (let i = 0; i < numbersList[0].length; i++) {
-        for (let j = 0; j < numbersList.length; j++) {
-            carry += parseInt(numbersList[j][numbersList[j].length - 1 - i]);
-        }
-        sum = (carry % 10) + sum;
-        carry = Math.floor(carry / 10);
+  let sum = '';
+  let carry = 0;
+  for (let i = 0; i < numbersList[0].length; i++) {
+    for (let j = 0; j < numbersList.length; j++) {
+      carry += parseInt(numbersList[j][numbersList[j].length - 1 - i]);
     }
-    return carry + sum;
+    sum = (carry % 10) + sum;
+    carry = Math.floor(carry / 10);
+  }
+  return carry + sum;
 }
 
 console.log(getSumOfBigListNumbers(NUMBERS_LIST.split('\n')));
